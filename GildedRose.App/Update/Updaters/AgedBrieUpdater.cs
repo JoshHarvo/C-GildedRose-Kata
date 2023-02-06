@@ -8,10 +8,7 @@ namespace GildedRose.App.Update.Updaters
         {
             UpdateTools.DecreaseSellIn(item);
 
-            if (item.Quality < UpdateTools.MaximumQuality)
-            {
-                UpdateTools.IncreaseQuality(item);
-            }
+            UpdateTools.IncreaseQuality(item);
 
             if (item.Quality < UpdateTools.MaximumQuality && item.SellIn < UpdateTools.MinimumSellIn)
             {

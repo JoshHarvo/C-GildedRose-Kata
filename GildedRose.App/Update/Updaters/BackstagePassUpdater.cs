@@ -6,10 +6,11 @@ namespace GildedRose.App.Update.Updaters
     {
         public void Update(Item item)
         {
+            UpdateTools.DecreaseSellIn(item);
+
             if (item.SellIn < 0)
             {
                 item.Quality = 0;
-                UpdateTools.DecreaseSellIn(item);
 
                 return;
             }
@@ -25,8 +26,6 @@ namespace GildedRose.App.Update.Updaters
             {
                 UpdateTools.IncreaseQuality(item);
             }
-
-            UpdateTools.DecreaseSellIn(item);
         }
     }
 }
